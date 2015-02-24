@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>State List Filter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body ng-app="basic">
+
+        <input id='filter' type='text' placeholder 'filter'>
+        <div id='stateTable'>
+            <table ng-controller="tableCtrl">
+            
+            <tr>
+                <th ng-click='onNameClick()'>Name</th>
+                <th ng-click='onNameClick()'>Abbreviation</th>
+                <th ng-click='onNameClick()'>Wikepedia Link</th>
+            </tr>
+
+            <tr id='state-list' ng-repeat='state in states'>
+                <td> {{ state.name}}</td>
+                <td> {{ state.abbreviation}}</td>
+                <td> <a ng-href='https://en.wikipedia.org/wiki/{{ state.name }}'>{{state.name}}</a></td>
+            </table>
+        </div>
+
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+        <script type="text/javascript" src="scripts/services.js"></script>
+        <script type="text/javascript" src="scripts/controllers.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+    </body>
+</html>
