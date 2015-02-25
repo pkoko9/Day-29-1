@@ -6,23 +6,30 @@
         <title>State List Filter</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/main.css">
+    
     </head>
-    <body ng-app="basic">
-
-        <input id='filter' type='text' placeholder 'filter'>
-        <div id='stateTable'>
-            <table ng-controller="tableCtrl">
+    <body ng-app="basic" ng-controller="tableCtrl">
+        
+        <div class='header'>
+            <span class='title'>States</span>
+            <input id='filter' type='text' placeholder='filter' ng-model='filterBy'>
+        </div>
+            <div id='stateTable'>
+            <table>
             
-            <tr>
-                <th ng-click='onNameClick()'>Name</th>
-                <th ng-click='onNameClick()'>Abbreviation</th>
-                <th ng-click='onNameClick()'>Wikepedia Link</th>
-            </tr>
+                <tr>
+                    <th class='name' ng-click='onNameClick()'>Name<i ng-show="stateArrow" class="fa fa-caret-up"> </i> <i ng-hide="stateArrow" class="fa fa-caret-down"></i></th>
+                    <th class='abbrev' ng-click='onNameClick()'>Abbreviation<i ng-show="abbArrow" class="fa fa-caret-up"> </i> <i ng-hide="abbArrow" class="fa fa-caret-down"></i></th>
+                    <th class='wiki' ng-click='onNameClick()'>Wikipedia Link</th>
+                </tr>
 
-            <tr id='state-list' ng-repeat='state in states'>
-                <td> {{ state.name}}</td>
-                <td> {{ state.abbreviation}}</td>
-                <td> <a ng-href='https://en.wikipedia.org/wiki/{{ state.name }}'>{{state.name}}</a></td>
+                <tr id='state-list' ng-repeat='state in secondArray'>
+                    <td> {{ state.name}}</td>
+                    <td> {{ state.abbreviation}}</td>
+                    <td> <a ng-href='https://en.wikipedia.org/wiki/{{ state.name }}'>{{state.name}}</a></td>
+                </tr>
             </table>
         </div>
 

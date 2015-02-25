@@ -1,0 +1,36 @@
+.header {
+	display: inline-block;
+	background-color: #B8D6F5;
+	height: 3em;
+	width: 23.5em;
+	padding-top: 1em;
+}
+
+.title {
+	font-weight: 900;
+	text-align: left;
+}
+
+#filter {
+	height: 2em;
+	width: 15em;
+	margin-left: 9em;
+	font-size: 12px;
+}
+
+table, th, td {
+	border: 1px solid black;
+	width: 35.7%;
+}
+
+td {
+	padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: #B8D6F5;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
